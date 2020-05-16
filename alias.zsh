@@ -59,7 +59,7 @@ alias psc10='ps aux|head -1;ps aux|grep -v PID|sort -rn -k 3 | head'
 alias psm10='ps aux|head -1;ps aux|grep -v PID|sort -rn -k 4 | head'
 
 ### mac supplement alias
-if [ "$(uname)"=="Darwin" ]; then
+if [[ "$OSTYPE" == "darwin"* ]];then
 
 alias ip='ip_addr | tr -d "\n" | pb; ip_addr'
 alias zd='cd ~/Desktop'
