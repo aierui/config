@@ -2,6 +2,9 @@
 
 ## Usage
 
+
+### Config ZSH
+
 1. 创建目录
     ```
     mkdir -p /data1/develop/aierui/config
@@ -13,4 +16,15 @@
 3. 安装
     ```
     ./start.sh
+    ```
+
+### Config Vim
+
+1. 安装 vim 包管理
+   ```
+   curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+   ```
+2. 安装插件
+    ```
+    :PlugInstall
     ```
