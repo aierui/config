@@ -120,7 +120,7 @@ source $ZSH/oh-my-zsh.sh
 # export GOROOT="/Users/develop/go-core-lib/1.13.0"
 # export GOROOT="/Users/develop/go-core-lib/1.13.5"
 export GOROOT="/Users/develop/go-core-lib/1.14.3"
-export GOPATH="/Users/develop/www/go-training"
+export GOPATH="/Users/develop/go-training"
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin:$GOBIN
 # Enable the go modules feature
