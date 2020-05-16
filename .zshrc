@@ -131,7 +131,7 @@ export GOPROXY=https://goproxy.cn,direct
 # export GOFLAGS=-mod=vendor
 
 
-### export private export env
+### export private global variables
 
 if [ -f ${PersonConfig}/private_export ]; then
 	. ${PersonConfig}/private_export
