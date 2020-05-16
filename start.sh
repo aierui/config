@@ -15,6 +15,10 @@ pip3 install virtualenv scipy numpy pandas jupyter tensorflow scikit-learn matpl
 # install zsh 
 # install oh-my-zsh (before install zsh)
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# install zsh theme
+cd $ZSH/custom/plugins/ && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+cd $ZSH/custom/plugins/ && git clone https://github.com/zsh-users/zsh-autosuggestions.git
+
 # zsh link
 ln -sf ${dirPath}/.zshrc ~/.zshrc
 
