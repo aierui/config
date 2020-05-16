@@ -1,0 +1,31 @@
+## cat ~/.gitconfig
+## link this file
+[core]
+	excludesfile = ~/.gitignore_global
+## detail link url https://git-scm.com/docs/git-config
+## must use include by absolute path
+[includeIf "gitdir/i:/Users/develop/aierui/"]
+  	path = /Users/develop/aierui/config/git/.user.aierui
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -l HEAD
+	wc = whatchanged
+	hist = log --pretty=format:\"%C(auto)%h %ad%C(auto)%s%d%Cblue(%an)\" --graph --date=short
+[gpg]
+	program = gpg2
+[http]
+	postBuffer = 1024288000
