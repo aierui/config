@@ -3,7 +3,6 @@
 #######################
 
 ### IP
-alias ip='ip_addr | tr -d "\n" | pb; ip_addr'
 alias cm='chmod' # change mode
 alias co='chown' # change owner
 alias e='exit'
@@ -62,6 +61,7 @@ alias psm10='ps aux|head -1;ps aux|grep -v PID|sort -rn -k 4 | head'
 ### mac supplement alias
 if [ "$(uname)"=="Darwin" ]; then
 
+alias ip='ip_addr | tr -d "\n" | pb; ip_addr'
 alias zd='cd ~/Desktop'
 alias zl='cd ~/Downloads'
 alias zo='cd ~/Documents'
