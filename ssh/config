@@ -1,0 +1,23 @@
+# cat /etc/ssh/ssh_config
+
+#host git.xx.xx.com
+#    Hostname git.xx.xx.com
+#    User jinrong6
+#    Port 2222
+#    IdentityFile ~/.ssh/xxx_id_rsa
+
+## ssh-keygen -t rsa -C "aieruishi@gmail.com" -b 4096
+## ssh -Tv git@github.com
+
+host github.com
+    Hostname github.com
+    User aierui
+    ## Port 2222
+    IdentityFile ~/.ssh/github_id_rsa
+    ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+    ServerAliveInterval 30
+    ServerAliveCountMax 5
+host gitee.com
+    Hostname gitee.com
+    User aierui
+    IdentityFile ~/.ssh/gitee_id_rsa 
