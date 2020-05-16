@@ -7,13 +7,16 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-if [ "$(uname)"=="Darwin" ]; then
+if [[ "$OSTYPE" == "darwin"* ]];then
     export DEV_PATH=/Users/develop
-  elif [ "$(expr substr $(uname -s) 1 5)"=="Linux" ]; then
+elif [[ "$OSTYPE" == "linux-gnu"*  ]];then
+	  export DEV_PATH=/data1/develop
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
     export DEV_PATH=/data1/develop
-  elif [ "$(expr substr $(uname -s) 1 10)"=="MINGW32_NT" ]; then
+else
     ## todo
     # export DEV_PATH=/data1/develop
+    echo "Other OS: ${OS}"
 fi
 export PersonConfig=${DEV_PATH}/aierui/config
 
