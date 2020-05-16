@@ -30,12 +30,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# cd $ZSH/custom/plugins/
 
 plugins=(
   git
   osx
-  zsh-syntax-highlighting
-  zsh-autosuggestions
+  zsh-syntax-highlighting ## git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+  zsh-autosuggestions ##  git clone https://github.com/zsh-users/zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
