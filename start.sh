@@ -12,7 +12,8 @@ npm install -g hexo-cli typescript
 # python install
 pip3 install virtualenv scipy numpy pandas jupyter tensorflow scikit-learn matplotlib seaborn pillow
 
-# install oh-my-zsh
+# install zsh 
+# install oh-my-zsh (before install zsh)
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 # zsh link
 ln -sf ${dirPath}/.zshrc ~/.zshrc
