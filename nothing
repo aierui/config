@@ -1,0 +1,71 @@
+## vendor/bin/phpunit --bootstrap tests/bootstrap.php tests
+
+## rm -rf vendor/**/.git
+## find vendor/ -type d -name ".git" -exec rm -rf {} \;
+
+## 一个文件每行末尾增加一个相同的字符串，如 ","
+## vim :%s/$/,
+
+## 替换文件中所有关键词
+## vim :%s/vipclub/new_word/g
+## 
+
+## mac 
+
+#alias killdns = "sudo killall -HUP mDNSResponder && sudo killall mDNSResponderHelper && sudo dscacheutil -flushcache";
+
+# sudo killall -HUP mDNSResponder
+# sudo killall mDNSResponderHelper
+# sudo dscacheutil -flushcache
+
+## 封 80
+# iptables -A INPUT -p tcp --dport 80 -j DROP
+
+## 开 80
+# iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+## 查看规则
+# iptables -L -nv
+
+## 全清掉了
+# iptables -F 
+# 或者清空具体的某行，获取行号，用 -D 参数
+# iptables -L -n --line-numbers 
+# iptables -D INPUT 1
+
+## 添加 
+##  chmod u+w /etc/sudoers
+# cat /etc/sudoers
+## 编辑 visudo — edit the sudoers file
+
+
+## ssh-keygen -t rsa -C "xxxx@staff.com" -b 4096
+## ssh-keygen -t rsa -C "aieruishi@gmail.com" -b 4096 
+## Code Line Statistics Tool
+# cloc .
+
+
+#看系统日志
+# vim /var/log/messages
+# 看内核日志
+# dmesg
+# tail -f /var/log/message
+# tail -f /var/log/boot.log
+##删除占用文件句柄的僵尸进程
+#lsof /data1 | grep deleted  | awk '{print $2}' | xargs kill -9
+## for i in `ls`; do mv -f $i `echo "15_"$i`; done
+## diff release git diff --name-status 1.0.0.1643 1.0.0.1645
+## git diff 1.0.0.1643 1.0.0.1645
+## git shortlog -e 1.0.0.1643...1.0.0.1645
+
+# 查看60分钟内的log
+# find . -mmin -60
+## install base dev
+## sudo yum -y install gcc gcc-c++ autoconf automake make
+
+## find ./ -name ".zip" | xargs rm -rfv
+
+## git commit 修改提交 msg  git 
+## git commit --amend
+## 修改网关
+## route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.75.15.1
