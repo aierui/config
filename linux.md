@@ -26,5 +26,18 @@
    ```
 2. 安装插件
     ```
+    # 在 vim 中
     :PlugInstall
+    ```
+
+### Go Install
+
+1. 安装 go 环境
+    ```
+    mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && rm -rf go$GOVERSION* && wget https://dl.google.com/go/go$GOVERSION.linux-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
+    ```
+2. 安装 go bin 
+    ```
+    # 在 vim 中
+    :GoInstallBinaries
     ```
