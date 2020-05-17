@@ -1,4 +1,4 @@
-# Mac Confs And Tools Collection
+# OS Confs And Tools Collection
 
 💫 very useful, can improve work efficiency and solve problems quickly.
 
