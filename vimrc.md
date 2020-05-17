@@ -93,7 +93,8 @@ vim ~/.vimrc
 1. 安装依赖关系
 
 	```
-	yum -y install build-essential cmake python3-dev
+	apt install build-essential cmake python3-dev
+	yum install gcc gcc-c++ make  //  equivalent of build-essential in CentOS.
 	```
 
 2. 编译
