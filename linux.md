@@ -2,18 +2,20 @@
 
 ## Usage
 
+### Init
+
+1. 安装环境依赖
+    ```
+    yum install -y git zsh
+    ```
 
 ### Config ZSH
 
-1. 创建目录
+1. 创建目录并克隆仓库
     ```
-    mkdir -p /data1/develop/aierui/config
+    mkdir -p /data1/develop/aierui/config && cd /data1/develop/aierui/config &&  git clone https://github.com/aierui/config.git ./
     ```
-2. 克隆仓库
-    ```
-    cd /data1/develop/aierui/config &&  git clone https://github.com/aierui/config.git ./
-    ```
-3. 安装
+2. 安装
     ```
     ./start.sh
     ```
@@ -34,7 +36,7 @@
 
 1. 安装 go 环境
     ```
-    mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && rm -rf go$GOVERSION* && wget https://dl.google.com/go/go$GOVERSION.linux-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
+    mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && wget https://dl.google.com/go/go$GOVERSION.linux-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
     ```
 2. 安装 go bin 
     ```
