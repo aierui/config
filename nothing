@@ -69,3 +69,8 @@
 ## git commit --amend
 ## 修改网关
 ## route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.75.15.1
+
+## SSH 自动断线 无相应问题
+## vim /etc/ssh/sshd_config
+## ClientAliveInterval 30 // 每隔多少秒，服务器端向客户端发送心跳
+## ClientAliveCountMax 6 // 多少次心跳无响应之后，会认为Client已经断开
