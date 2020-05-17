@@ -6,6 +6,8 @@
 ## must use include by absolute path
 [includeIf "gitdir/i:/Users/develop/aierui/"]
   	path = /Users/develop/aierui/config/git/.user.aierui
+[includeIf "gitdir/i:/data1/develop/aierui/"]
+  	path = /data1/develop/aierui/config/git/.user.aierui
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
