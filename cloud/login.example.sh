@@ -12,7 +12,8 @@ fi
 
 want_login_ip=$1
 
-IP=`echo $want_login_ip | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"`
+#IP=`echo $want_login_ip | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}"`
+IP=`echo $want_login_ip | grep -E -o "(\d{1,3}\.){3}\d{1,3}"`
 
 if [[ -n $IP ]]; #直接登录该IP
 then

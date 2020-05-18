@@ -2,7 +2,7 @@
 
 #host git.xx.xx.com
 #    Hostname git.xx.xx.com
-#    User jinrong6
+#    User aierui
 #    Port 2222
 #    IdentityFile ~/.ssh/xxx_id_rsa
 
