@@ -27,6 +27,7 @@ ln -sf ${dirPath}/.zshrc ~/.zshrc
 
 # git config
 ln -sf ${dirPath}/git/.gitconfig ~/.gitconfig
+ln -sf ${dirPath}/git/.gitignore_global ~/.gitignore_global
 
 
 ## vim https://github.com/BroQiang/vim-go-ide
