@@ -39,4 +39,3 @@ fi
 run cd ${devPath}/aierui/config && git clone https://github.com/aierui/config.git ./
 
 run ${devPath}/aierui/config/start.sh
-run ${devPath}/aierui/config/start.sh
