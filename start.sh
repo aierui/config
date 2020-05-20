@@ -25,8 +25,7 @@ function run() {
 function installDependentOnLinux() {
   log "start install that dependent soft ware"
 
-  run yum install -y
-  sysstat \
+  run yum install -y sysstat \
     dstat \
     iftop \
     iotop \
