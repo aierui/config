@@ -27,6 +27,7 @@ else
     exit
 fi
 
+run rm -rf ${devPath}/aierui/config
 run mkdir -p ${devPath}/aierui/config
 
 if type git >/dev/null 2>&1; then
@@ -35,7 +36,6 @@ else
     run yum install -y git
 fi
 
-run rm -rf ${devPath}/aierui/config
 run cd ${devPath}/aierui/config && git clone https://github.com/aierui/config.git ./
 
 run ${devPath}/aierui/config/start.sh
