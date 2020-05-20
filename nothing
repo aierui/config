@@ -74,3 +74,19 @@
 ## vim /etc/ssh/sshd_config
 ## ClientAliveInterval 30 // 每隔多少秒，服务器端向客户端发送心跳
 ## ClientAliveCountMax 6 // 多少次心跳无响应之后，会认为Client已经断开
+
+## git upstream
+## git clone git@github.com:aierui/talent-plan.git
+## git remote add upstream git@github.com:pingcap/talent-plan.git
+## git remote set-url --push upstream no_push // Never push to upstream master since you do not have write access.
+## git remote -v  // Confirm that your remotes make sense:
+## git fetch upstream
+## git checkout master
+## git rebase upstream/master
+## git checkout -b develop
+## develop,debug,test and so on.
+## Keep your branch in sync 
+## While on your myfeature branch.
+## git fetch upstream
+## git rebase upstream/master
+## add and commit and push to origin develop
