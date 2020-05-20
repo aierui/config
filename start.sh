@@ -38,7 +38,8 @@ function installDependentOnLinux() {
     gcc-c++ \
     make \
     ctags \
-    tree
+    tree \
+    zsh
 
   log "install finished that dependent soft ware"
 }
