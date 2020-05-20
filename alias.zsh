@@ -50,6 +50,7 @@ alias vv='v ${PersonConfig}/.vimrc'
 ### Git
 ### https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
 alias push=$PersonConfig/git/push.sh
+alias gu=$PersonConfig/git/user.sh
 
 
 ## PS 
