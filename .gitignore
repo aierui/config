@@ -2,3 +2,7 @@
 cloud/login.sh
 private*
 *private*
+
+#IDE
+.vscode
+.idea
