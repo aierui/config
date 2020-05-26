@@ -36,7 +36,10 @@
 
 1. 安装 go 环境
     ```
+    # linux
     mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && wget https://dl.google.com/go/go$GOVERSION.linux-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
+    # max os
+    mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && wget https://dl.google.com/go/go$GOVERSION.darwin-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
     ```
 2. 安装 go bin 
     ```
