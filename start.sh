@@ -67,10 +67,11 @@ function installSoftWare() {
 function installExtend() {
   # install zsh
   # install oh-my-zsh (before install zsh)
-  wget -O /tmp/zsh_install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | chmod +x /tmp/zsh_install.sh && /tmp/zsh_install.sh
+  wget -O /tmp/zsh_install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh && chmod +x /tmp/zsh_install.sh && /tmp/zsh_install.sh
   # install zsh theme
   cd ~/.oh-my-zsh/custom/plugins/ && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
   cd ~/.oh-my-zsh/custom/plugins/ && git clone https://github.com/zsh-users/zsh-autosuggestions.git
+  exit
   cd ${dirPath}
 }
 
