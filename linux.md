@@ -38,7 +38,7 @@
     ```
     # linux
     mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && wget https://dl.google.com/go/go$GOVERSION.linux-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
-    # max os
+    # mac os
     mkdir -p $DEV_PATH/go-core-lib && cd $DEV_PATH/go-core-lib && wget https://dl.google.com/go/go$GOVERSION.darwin-amd64.tar.gz && tar -zxvf go$GOVERSION* && mv go $GOVERSION
     ```
 2. 安装 go bin 
@@ -46,3 +46,4 @@
     # 在 vim 中
     :GoInstallBinaries
     ```
+
