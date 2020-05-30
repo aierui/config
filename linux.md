@@ -46,3 +46,4 @@
     # 在 vim 中
     :GoInstallBinaries
     ```
+
