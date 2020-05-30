@@ -90,3 +90,5 @@
 ## git fetch upstream
 ## git rebase upstream/master
 ## add and commit and push to origin develop
+
+## sudo /bin/chmod +a 'user:yixiao:allow write' /etc/hosts
