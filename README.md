@@ -37,5 +37,5 @@
 ## Usage
 
 ```
-sh -c "$(wget https://raw.githubusercontent.com/aierui/config/master/install.sh -O -)"
+curl -s https://raw.githubusercontent.com/aierui/config/master/install.sh | sh
 ```
