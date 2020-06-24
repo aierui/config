@@ -19,6 +19,7 @@ else
     echo "Other OS: ${OS}"
 fi
 export PersonConfig=${DEV_PATH}/aierui/config
+export LC_ALL=en_US.UTF-8
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
