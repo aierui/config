@@ -2,6 +2,8 @@
 cloud/login.sh
 private*
 *private*
+*didi*
+*test*
 
 #IDE
 .vscode

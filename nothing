@@ -69,6 +69,7 @@
 ## git commit --amend
 ## 修改网关
 ## route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.75.15.1
+## ethtool -i eth0
 
 ## SSH 自动断线 无相应问题
 ## vim /etc/ssh/sshd_config
@@ -90,3 +91,5 @@
 ## git fetch upstream
 ## git rebase upstream/master
 ## add and commit and push to origin develop
+
+## sudo /bin/chmod +a 'user:yixiao:allow write' /etc/hosts
