@@ -57,6 +57,7 @@
 ## diff release git diff --name-status 1.0.0.1643 1.0.0.1645
 ## git diff 1.0.0.1643 1.0.0.1645
 ## git shortlog -e 1.0.0.1643...1.0.0.1645
+## for file in `ls`; do goplantuml ./$file > ./$file/diagram.puml ; done;
 
 # 查看60分钟内的log
 # find . -mmin -60
