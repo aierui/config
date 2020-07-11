@@ -8,8 +8,13 @@
   	path = /Users/develop/aierui/config/git/.user.aierui
 [includeIf "gitdir/i:/data1/develop/aierui/"]
   	path = /data1/develop/aierui/config/git/.user.aierui
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+# [difftool "sourcetree"]
+# 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+# 	path = 
+[diff]
+    tool = vimdiff
+[difftool "vimdiff"]
+	cmd = /usr/local/bin/vimdiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
