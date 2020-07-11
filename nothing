@@ -93,4 +93,10 @@
 ## git rebase upstream/master
 ## add and commit and push to origin develop
 
+## delete remote branch (fork project)
+## git push origin --delete  training-4.0
+
+## by vimdiff two view
+## git difftool training-4.0 upstream/master  tidb-server/main.go
+
 ## sudo /bin/chmod +a 'user:yixiao:allow write' /etc/hosts
