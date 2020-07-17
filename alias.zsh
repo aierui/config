@@ -91,3 +91,6 @@ alias docs='docsify serve ./'
 alias ccm="composer config repo.packagist composer https://packagist.phpcomposer.com"
 alias ccml="composer config repo.packagist composer https://packagist.laravel-china.org"
 
+
+## go
+alias fmt='gofmt -s -l -w ./ && test -d cmd/importcheck && cd cmd/importcheck/ && go run . ../.. && cd ../../'
