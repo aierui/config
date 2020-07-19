@@ -3,7 +3,7 @@
 配置统一环境，在不同平台得到一样的体验～
 
 最终效果：
-![](../config/images/screen-shot-vim.png)
+![](./images/screen-shot-vim.png)
 
 
 ## Vim
