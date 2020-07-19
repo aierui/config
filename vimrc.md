@@ -105,7 +105,11 @@ vim ~/.vimrc
 	python3 install.py --go-completer 
 	```
 
+## FAQ
 
-
+- python3 not support error?
+	```
+	brew reinstall vim
+	```
 
 
