@@ -177,7 +177,7 @@ autocmd FileType go nmap <leader>r :GoRun %<CR>
 " NERDTree 插件
 "==============================================================================
 
-" 打开和关闭NERDTree快捷键 F10 开启或关闭 左侧目录树
+" 打开和关闭NERDTree快捷键 F10 开启或关闭 左侧目录树 ctr+w+h 光标focus左侧树形目录,ctrl+w+l 光标focus右侧文件显示窗口。
 map <F10> :NERDTreeToggle<CR>
 nmap <M-m> :NERDTreeFind<CR>
 
