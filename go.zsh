@@ -15,3 +15,4 @@ export PATH=$PATH:$GOROOT/bin:$GOBIN
 export GOPROXY=https://goproxy.cn,direct
 # export GOPROXY=https://goproxy.cn
 # export GOFLAGS=-mod=vendor
+export GOTRACEBACK=1 # 把所有的goroutine信息都输出出来
