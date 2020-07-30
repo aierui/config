@@ -9,6 +9,8 @@
 ## 替换文件中所有关键词
 ## vim :%s/vipclub/new_word/g
 ## 
+## 
+## sed  's/req=//g'
 
 ## mac 
 
