@@ -60,6 +60,10 @@
 ## git diff 1.0.0.1643 1.0.0.1645
 ## git shortlog -e 1.0.0.1643...1.0.0.1645
 ## for file in `ls`; do goplantuml ./$file > ./$file/diagram.puml ; done;
+## 查看端口被哪个进程监听 sudo lsof -i :端口
+## 查看进程监听的端口 sudo lsof -nP -p 进程号 | grep LISTEN 或者 sudo lsof -nP | grep LISTEN | grep 进程号
+## 查看监听端口的进程 sudo lsof -nP | grep LISTEN | grep 端口号
+
 
 # 查看60分钟内的log
 # find . -mmin -60
