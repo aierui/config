@@ -36,3 +36,6 @@
 	program = gpg2
 [http]
 	postBuffer = 1024288000
+## 替换所有的 HTTPS 为 SSH
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
