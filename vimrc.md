@@ -128,10 +128,7 @@ make && make install
 
 ```
 ./configure --prefix=/usr/local/vim-8.0 \
- --with-features=huge \
- --enable-multibyte \
  --enable-rubyinterp=yes \
- --enable-pythoninterp=yes \
  --enable-python3interp=yes \
  --with-python3-config-dir=/usr/lib/python3.6/ \
  --enable-perlinterp=yes \
@@ -145,8 +142,8 @@ make && make install
 mv /usr/bin/vim /usr/bin/vim7
 mv /usr/bin/vi /usr/bin/vi7
 # 添加新链接
-ln -s /usr/local/vim-8.0 /usr/local/vim
-ln -s /usr/local/vim/bin/vim /usr/bin/vi
-ln -s /usr/local/vim/bin/vim /usr/bin/vim
+ln -sf /usr/local/vim-8.0/bin/vim /usr/local/vim
+ln -sf /usr/local/vim/bin/vim /usr/bin/vi
+ln -sf /usr/local/vim/bin/vim /usr/bin/vim
 # 添加环境变量
 ```
