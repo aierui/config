@@ -139,3 +139,7 @@ ctrl-V 使下一个特殊字符可以插入在当前位置, 如CTRL-V <TAB> 可�
 ctrl-C 撤消当前命令行的编辑, 另起一行.
 ctrl-S 暂时冻结当前shell的输入
 ctrl-Q 解冻
+
+## 设置 mac 消息提示显示时间 
+## 设置 defaults write com.apple.notificationcenterui bannerTime -int 1 单位秒 
+## 测试 osascript -e 'display notification "test notification!"'
