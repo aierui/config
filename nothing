@@ -143,3 +143,9 @@ ctrl-Q 解冻
 ## 设置 mac 消息提示显示时间 
 ## 设置 defaults write com.apple.notificationcenterui bannerTime -int 1 单位秒 
 ## 测试 osascript -e 'display notification "test notification!"'
+
+
+## 埋点
+## nohup top -b -i -d 1 > /tmp/cpu.info &
+## nohup iotop -b -o -t > /tmp/iotop.info &
+## for((;;)); do date; netstat -s ; sleep 1; done > /tmp/netstat.info &
