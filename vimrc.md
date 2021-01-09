@@ -116,6 +116,12 @@ vim ~/.vimrc
 	brew reinstall vim
 	```
 
+- YouCompleteMe unavailable: requires Vim compiled with Python (3.6+)
+	```
+	cd ~/.vim/plugged/youcompleteme
+	sudo python3 ./install.py --all 
+	```
+
 
 ## Vim8.0 python3.6
 
