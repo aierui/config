@@ -34,6 +34,8 @@
 	hist = log --pretty=format:\"%C(auto)%h %ad%C(auto)%s%d%Cblue(%an)\" --graph --date=short
 	find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
     	show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+	show-contributor = !sh -c "$(git log --format=%aN | sort -u | while read name; do echo -en "$name\t";git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' ; done)"
+    	show-author = ! git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 10
 [gpg]
 	program = gpg2
 [http]
