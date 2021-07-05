@@ -14,7 +14,7 @@ host github.com
     User aierui
     ## Port 2222
     IdentityFile ~/.ssh/github_id_rsa
-    ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+    #ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
     ServerAliveInterval 30
     ServerAliveCountMax 5
 host gitee.com
