@@ -40,7 +40,7 @@
 	program = gpg2
 [http]
 	postBuffer = 1024288000
-	proxy = socks5://127.0.0.1:7891
+#	proxy = socks5://127.0.0.1:789#1
 ## 替换所有的 HTTPS 为 SSH
 # [url "ssh://git@github.com/"]
 # 	insteadOf = https://github.com/
