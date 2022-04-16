@@ -9,8 +9,9 @@
 ## 替换文件中所有关键词
 ## vim :%s/vipclub/new_word/g
 ## 
+
 ## 
-## sed  's/req=//g'
+sed  's/req=//g'
 
 ## mac 
 
@@ -34,6 +35,67 @@
 # 或者清空具体的某行，获取行号，用 -D 参数
 # iptables -L -n --line-numbers 
 # iptables -D INPUT 1
+# tcpdump -vvvs 1024 -l -A host 172.25.160.19 -w /tmp/tcp.pcap  [ -i any/eth0 ]
+# (使用 Wireshark 打开 /tmp/tcp.pcap 后, 从菜单栏中，点击 Statistics -> Flow Graph，然后，在弹出的界面中的 Flow type 选择 TCP Flows，你可以更清晰的看到)
+# netstat -n -p | grep SYN_REC (查看 TCP 半开连接的方法)
+# netstat -lnpa | grep :20000  | awk '{print $6}' | sort | uniq -c | sort -rn ## 端口的连接状态统计
+# ss -lnt | grep :9090
+# State      Recv-Q Send-Q Local Address:Port               Peer Address:Port
+# LISTEN     51     50           *:9090                     *:*
+
+# 对于 LISTEN 状态的套接字，Recv-Q 表示 accept 队列排队的连接个数，Send-Q 表示全连接队列（也就是 accept 队列）的总大小。
+
+## 半连接队列：服务端收到客户端的 SYN 包，回复 SYN+ACK 但是还没有收到客户端 ACK 情况下，会将连接信息放入半连接队列。半连接队列又被称为 SYN 队列。
+## 全连接队列：服务端完成了三次握手，但是还未被 accept 取走的连接队列。全连接队列又被称为 Accept 队列。
+## 半连接队列的大小与用户 listen 传入的 backlog、net.core.somaxconn、net.core.somaxconn 都有关系
+## 全连接队列的大小是用户 listen 传入的 backlog 与 net.core.somaxconn 的较小值
+
+
+# 链接：https://juejin.cn/post/6844904071367753736
+
+
+# -f表示跟踪子进程和子线程，-T表示显示系统调用的时长，-tt表示显示跟踪时间
+# strace -f -T -tt -p 9085
+# -e 选项指定 fdatasync 
+# strace -f -p 9085 -T -tt -e fdatasync
+
+# sar -n DEV 1 5 网卡级别流量图
+# sar -B -f /var/log/sa/sa20  -s 16:30:00 -e 17:00:00 查看 page cahce 指定时间段信息
+# yum install iftop 
+## iftop -i eth0 -P
+## ss -s 
+## netstat -s
+## netstat -nlp | head -n 10
+## ss -ltnp | head -n 10
+# ethtool eth0 | grep Speed 查看网卡速度
+
+```
+ethtool eth0 | grep Speed  
+ Speed: 1000Mb/s
+```
+
+cat /proc/slabinfo
+
+
+
+## pagesize
+```
+cd /proc/1
+grep -i pagesize smaps
+```
+
+## block size
+```
+stat -f .
+```
+
+# +trace表示开启跟踪查询# +nodnssec表示禁止DNS安全扩展$ 
+# dig +trace +nodnssec time.geekbang.org
+
+# nslookup -debug time.geekbang.org
+
+
+
 
 ## 添加 
 ##  chmod u+w /etc/sudoers
@@ -59,24 +121,26 @@
 ## diff release git diff --name-status 1.0.0.1643 1.0.0.1645
 ## git diff 1.0.0.1643 1.0.0.1645
 ## git shortlog -e 1.0.0.1643...1.0.0.1645
-## for file in `ls`; do goplantuml ./$file > ./$file/diagram.puml ; done;
-## 查看端口被哪个进程监听 sudo lsof -i :端口
-## 查看进程监听的端口 sudo lsof -nP -p 进程号 | grep LISTEN 或者 sudo lsof -nP | grep LISTEN | grep 进程号
-## 查看监听端口的进程 sudo lsof -nP | grep LISTEN | grep 端口号
-
 
 # 查看60分钟内的log
-# find . -mmin -60
+# 
+
 ## install base dev
 ## sudo yum -y install gcc gcc-c++ autoconf automake make
 
 ## find ./ -name ".zip" | xargs rm -rfv
+## find /usr/local/backups -mtime +10 -name "*.*" -exec rm -rf {} \;
+## find ./ -mtime +7 -name "*ihap-cc.log.202.*" -exec rm -rf {} \;
 
 ## git commit 修改提交 msg  git 
 ## git commit --amend
 ## 修改网关
 ## route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.75.15.1
 ## ethtool -i eth0
+## 查看端口被哪个进程监听 sudo lsof -i :端口
+## 查看进程监听的端口 sudo lsof -nP -p 进程号 | grep LISTEN 或者 sudo lsof -nP | grep LISTEN | grep 进程号
+## 查看监听端口的进程 sudo lsof -nP | grep LISTEN | grep 端口号
+
 
 ## SSH 自动断线 无相应问题
 ## vim /etc/ssh/sshd_config
@@ -99,53 +163,59 @@
 ## git rebase upstream/master
 ## add and commit and push to origin develop
 
-## delete remote branch (fork project)
-## git push origin --delete  training-4.0
-
-## by vimdiff two view
-## git difftool training-4.0 upstream/master  tidb-server/main.go
-
 ## sudo /bin/chmod +a 'user:yixiao:allow write' /etc/hosts
 
+## charles register site：https://www.charles.ren/
 
 
-#ctrl键组合
-ctrl+a:光标跳到行首。
-ctrl+b:光标左移一个字母
-ctrl+c:杀死当前进程。
-ctrl+d: 删除提示符后一个字符或exit或logout。
-ctrl+e:光标移到行尾。
-ctrl+f后移一个字符
-ctrl+h:删除光标前一个字符，同backspace 键相同。
-ctrl+k:清除光标后至行尾的内容。
-ctrl+l:清屏，相当于clear。
-Ctrl+p重复上一次命令
-ctrl+r:搜索之前打过的命令。会有一个提示，根据你输入的关键字进行搜索bash的history
-ctrl+u: 清除光标前至行首间的所有内容。
-ctrl+w: 同上
-ctrl+t: 交换光标位置前的两个字符
-ctrl+y: 粘贴或者恢复上次的删除
-ctrl+d: 删除光标所在字母;注意和backspace以及ctrl+h的区别，这2个是删除光标前的字符
-ctrl+f: 光标右移
-ctrl+z : 把当前进程转到后台运行，使用’ fg ‘命令恢复。比如top -d1 然后ctrl+z ，到后台，然后fg,重新恢复
-Ctrl+x同上但再按一次会从新回到原位置
-Ctrl+o Ctrl+y Ctrl+i Crtl+m这4个没搞清楚怎么用
-ctrl-I 等同于按制表符<TAB>键
-ctrl-W 不是删除光标前的所有字符, 它删除光标前的一个单词
-ctrl-P 是recall出上一个命令 <===> CTRL-N 是recall出下一个命令
-ctrl-M 等同于回车键
-ctrl-O 等同于回车键
-ctrl-V 使下一个特殊字符可以插入在当前位置, 如CTRL-V <TAB> 可以在当前位置插入一个<TAB>字符, 其ASCII是9, 否则一般情况下按<TAB>结果是命令补齐
-ctrl-C 撤消当前命令行的编辑, 另起一行.
-ctrl-S 暂时冻结当前shell的输入
-ctrl-Q 解冻
-
-## 设置 mac 消息提示显示时间 
-## 设置 defaults write com.apple.notificationcenterui bannerTime -int 1 单位秒 
+## 设置 mac 消息提示显示时间
+## 设置 defaults write com.apple.notificationcenterui bannerTime -int 1 单位秒
 ## 测试 osascript -e 'display notification "test notification!"'
 
+## 移除旧的版本
+## brew cleanup -n
 
-## 埋点
-## nohup top -b -i -d 1 > /tmp/cpu.info &
-## nohup iotop -b -o -t > /tmp/iotop.info &
-## for((;;)); do date; netstat -s ; sleep 1; done > /tmp/netstat.info &
+## python -m SimpleHTTPServer 8098
+
+
+## gcc -g -Wall -std=c++11
+
+
+
+## 末行模式下 :
+## 删除光标 后面 :,$d
+## 删除光标 前面 :0,d
+## 文本原本的粘贴到Vim中，以避免一些格式错误。通过“:set paste”和“:set nopaste”进入和退出该模式
+
+## ps show thread name
+## ps -eLl | head -1 ; ps -eLl | grep 23213
+## or use htop, need setting F2-> display thread name
+
+
+/etc/security/limits.conf
+
+sodo soft nproc 1000000
+sodo hard nproc 1000000
+sodo soft nofile 1000000
+sodo hard nofile 1000000
+
+# 找到某个进程 FD 突然上升 来源IP
+lsof -nP -p 107169 > all.log  (整机 netstat > all.log)
+cat all.log |grep '100.90.232.52' | awk -F '->' '{print $2}' | awk -F ':' '{print $1}' | sort | uniq -c | sort -nr | head
+cat all.log | awk '{print $5}'|awk -F':' '{print $1}'|sort |uniq -c|sort -nr
+
+
+
+若希望保持长连接，需要做如下修改：
+1、打开ssh配置文件：
+
+# vim /etc/ssh/sshd_config
+
+加入如下两个参数保存就可以：
+
+TCPKeepAlive yes
+ClientAliveCountMax 360
+
+注：前一个参数表示要保持TCP连接，后一个参数表示客户端的SSH连接闲置多长时间后自动终止连接的数值，单位为分钟。
+2、重启sshd生效：
+/etc/init.d/sshd restart
