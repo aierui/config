@@ -5,18 +5,18 @@ function github() {
     git config user.email "aieruishi@gmail.com"
 }
 
-function didi() {
-	echo "account is "$DIDI_ACCOUNT
-    git config user.name $DIDI_ACCOUNT
-    git config user.email "$DIDI_ACCOUNT@didiglobal.com"
+function xxx() {
+	echo "account is "$xxx_ACCOUNT
+    git config user.name $xxx_ACCOUNT
+    git config user.email "$xxx_ACCOUNT@xxx.com"
 }
 
 case "$1" in
 	github)
 		github
 	;;
-	didi)
-		didi
+	xxx)
+		xxx
 	;;
 esac
 
