@@ -83,6 +83,10 @@ clear_php()
 }
 
 
+## py
+alias web='python3 -m http.server 7800'
+
+
 ### doc
 
 alias docs='docsify serve ./'
