@@ -180,7 +180,7 @@ autocmd FileType go nmap <leader>r :GoRun %<CR>
 " NERDTree 插件
 "==============================================================================
 
-" 打开和关闭NERDTree快捷键
+" 打开和关闭NERDTree快捷键 F10 开启或关闭 左侧目录树 ctr+w+h 光标focus左侧树形目录,ctrl+w+l 光标focus右侧文件显示窗口。
 map <F10> :NERDTreeToggle<CR>
 nmap <M-m> :NERDTreeFind<CR>
 
@@ -205,7 +205,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 "  majutsushi/tagbar 插件
 "==============================================================================
 
-" majutsushi/tagbar 插件打开关闭快捷键
+" majutsushi/tagbar 插件打开关闭快捷键 F9 开启或关闭大纲模式 需要 ctag
 nmap <F9> :TagbarToggle<CR>
 
 let g:tagbar_type_go = {
