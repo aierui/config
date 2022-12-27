@@ -131,6 +131,9 @@ Plug 'fatih/vim-go', { 'tag': '*' }
 " go 中的代码追踪，输入 gd 就可以自动跳转
 Plug 'dgryski/vim-godef'
 
+" rust 
+Plug 'rust-lang/rust.vim'
+
 " markdown 插件
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
@@ -177,7 +180,7 @@ autocmd FileType go nmap <leader>r :GoRun %<CR>
 " NERDTree 插件
 "==============================================================================
 
-" 打开和关闭NERDTree快捷键 F10 开启或关闭 左侧目录树 ctr+w+h 光标focus左侧树形目录,ctrl+w+l 光标focus右侧文件显示窗口。
+" 打开和关闭NERDTree快捷键
 map <F10> :NERDTreeToggle<CR>
 nmap <M-m> :NERDTreeFind<CR>
 
@@ -202,7 +205,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 "  majutsushi/tagbar 插件
 "==============================================================================
 
-" majutsushi/tagbar 插件打开关闭快捷键 F9 开启或关闭大纲模式 需要 ctag
+" majutsushi/tagbar 插件打开关闭快捷键
 nmap <F9> :TagbarToggle<CR>
 
 let g:tagbar_type_go = {
@@ -341,3 +344,14 @@ if has("autocmd")
 		\ endif
 	au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+
+
+"==============================================================================
+" rust rust-analyzer
+" 参考： https://rust-analyzer.github.io/manual.html#vimneovim
+"==============================================================================
+
+let g:LanguageClient_serverCommands = {
+\ 'rust': ['rust-analyzer'],
+\ }
+
